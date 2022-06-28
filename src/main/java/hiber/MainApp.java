@@ -1,7 +1,6 @@
 package hiber;
 
 import hiber.config.AppConfig;
-import hiber.model.Car;
 import hiber.model.User;
 import hiber.service.UserService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -15,12 +14,9 @@ public class MainApp {
             new AnnotationConfigApplicationContext(AppConfig.class);
 
       UserService userService = context.getBean(UserService.class);
-      User user1 = new User("User1", "Lastname1", "user1@mail.ru");
-      User user2 = new User("User2", "Lastname2", "user2@mail.ru");
-      User user3 = new User("User3", "Lastname3", "user3@mail.ru");
-      user1.setCar(new Car("Lada"));
-      user2.setCar(new Car("BMW"));
-      user3.setCar(new Car("KIA"));
+      User user1 = new User("User1", "Lastname1");
+      User user2 = new User("User2", "Lastname2");
+      User user3 = new User("User3", "Lastname3");
 
       userService.add(user1);
       userService.add(user2);

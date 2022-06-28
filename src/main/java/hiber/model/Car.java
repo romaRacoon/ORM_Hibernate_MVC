@@ -3,6 +3,7 @@ package hiber.model;
 import javax.persistence.*;
 
 @Entity
+@Embeddable
 public class Car {
     private String model;
 

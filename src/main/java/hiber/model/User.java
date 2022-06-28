@@ -4,6 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "users")
+@Embeddable
 public class User {
 
    @Id
@@ -25,10 +26,9 @@ public class User {
 
    public User() {}
    
-   public User(String firstName, String lastName, String email) {
+   public User(String firstName, String lastName) {
       this.firstName = firstName;
       this.lastName = lastName;
-      this.email = email;
    }
 
    public Long getId() {
