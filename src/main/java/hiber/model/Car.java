@@ -3,14 +3,12 @@ package hiber.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "cars")
 public class Car {
+    private String model;
+
     @Id
     @GeneratedValue
     private int series;
-
-    @Column(name = "model")
-    private String model;
 
     @OneToOne(mappedBy = "car", cascade = CascadeType.ALL)
     private User user;
