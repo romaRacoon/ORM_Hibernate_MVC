@@ -9,10 +9,16 @@ import org.springframework.stereotype.Repository;
 import javax.persistence.TypedQuery;
 import java.util.List;
 
+@Repository
 public class UserDaoImp implements UserDao {
 
    @Autowired
    private SessionFactory sessionFactory;
+
+   @Override
+   public void addCar(Car car) {
+      sessionFactory.getCurrentSession().save(car);
+   }
 
    @Override
    public void add(User user) {
@@ -25,5 +31,4 @@ public class UserDaoImp implements UserDao {
       TypedQuery<User> query=sessionFactory.getCurrentSession().createQuery("from User");
       return query.getResultList();
    }
-
 }
